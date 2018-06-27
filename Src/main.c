@@ -133,6 +133,7 @@ int main(void)
 	TRACE_DEBUG("- '3': Load Logo Customer\r\n");
 	__HAL_UART_ENABLE_IT(&huart3,UART_IT_RXNE);
 	
+
 	TRACE_DEBUG("\r\n\r\n********** This is Applicaton code **********\n\r");
 	TRACE_DEBUG("\r\n\r\n********** Version 5.0 Ngay 26/06/2017 **********\n\r");
 	TRACE_DEBUG("\r\n\r\n********** Demo Full system UART **********\n\r");
@@ -151,6 +152,7 @@ int main(void)
 	TRACE_DEBUG("- '3': Load Logo Customer\r\n");
 	__HAL_UART_ENABLE_IT(&huart3,UART_IT_RXNE);
 	
+
 	WriteEpromFlash(EepromFlashAddress,HAVE_APP_CODE_ADDR,1);
   /* USER CODE END 2 */
 
