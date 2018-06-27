@@ -164,6 +164,31 @@ int main(void)
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
+  
+	if(flagUART==1) {
+			flagUART=0;
+			switch(ch) {
+				case '1':
+					TRACE_DEBUG("\r\n\r\n*****Load Main Code*****: %c\n\r",ch);
+					WriteEpromFlash(EepromFlashAddress,RUN_CODE_ADDR,MARK_RUN_BOOT_CODE);
+
+					WriteEpromFlash(EepromFlashAddress,SUCCESS_MAIN_ADDR,0);
+					WriteEpromFlash(EepromFlashAddress,SUCCESS_BKUP_ADDR,1);
+					NVIC_SystemReset();
+					break;
+				case '2':
+					TRACE_DEBUG("\r\n\r\n***** Load Logo Production *****\n\r");
+					break;
+				case '3':
+					TRACE_DEBUG("\r\n\r\n***** Load Logo Customer *****\n\r");
+					break;
+				default:
+					TRACE_DEBUG("\r\n\r\n***** Enter Other Character*****\n\r");
+					ch='\0';
+					break;
+			}
+		}
+		
 	if(flagUART==1) {
 			flagUART=0;
 			switch(ch) {
